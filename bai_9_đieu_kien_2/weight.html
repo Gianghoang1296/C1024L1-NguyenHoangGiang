@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<label for="weight">Weight   :</label>
+<input type="text" name="" id="weight">
+<br>
+<br>
+<label for="height">Height:</label>
+<input type="text" name="" id="height">
+<br>
+<br>
+<button onclick="checked()">Checked</button>
+<p id="result"></p>
+    <script>
+   function checked(){
+       let weight = document.getElementById("weight").value;
+       let height =document.getElementById("height").value;
+       let bmi = weight/ (Math.pow(height,2));
+       let result ="";
+       if (bmi < 18)
+           result ="Underweight";
+       else if (bmi < 25.0)
+           result ="Normal";
+       else if (bmi < 30.0)
+           result ="Overweight";
+       else
+           result ="Obese";
+
+       document.getElementById("result").innerHTML = "Your bmi is  :" + bmi +"<br>"+ "You are  :" + result +"<br>";
+   }
+</script>
+
+</body>
+</html>
